@@ -134,9 +134,15 @@ export const ContactPage = () => {
                 </div>
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="text-white hover:text-cyan-400 transition-colors"
+                  className="text-white hover:text-cyan-400 transition-colors block"
                 >
                   {profileData.email}
+                </a>
+                <a
+                  href="mailto:contact@takieddinerami.tech"
+                  className="text-white hover:text-cyan-400 transition-colors block mt-1"
+                >
+                  contact@takieddinerami.tech
                 </a>
               </div>
 

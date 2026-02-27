@@ -65,6 +65,13 @@ export const Footer = () => {
                 <Mail size={16} className="text-cyan-400" />
                 <span className="group-hover:underline">{profileData.email}</span>
               </a>
+              <a
+                href="mailto:contact@takieddinerami.tech"
+                className="flex items-center gap-2 text-white/60 hover:text-cyan-400 transition-colors text-sm group"
+              >
+                <Mail size={16} className="text-cyan-400" />
+                <span className="group-hover:underline">contact@takieddinerami.tech</span>
+              </a>
 
               {/* Phone */}
               <div className="space-y-1">
