@@ -50,8 +50,27 @@
       },
     },
     build: {
-      target: 'esnext',
+      target: 'es2020',
       outDir: 'build',
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom', 'react-router'],
+            'motion-vendor': ['motion'],
+            'radix-vendor': [
+              '@radix-ui/react-dialog',
+              '@radix-ui/react-dropdown-menu',
+              '@radix-ui/react-tooltip',
+              '@radix-ui/react-tabs',
+              '@radix-ui/react-accordion',
+              '@radix-ui/react-select',
+              '@radix-ui/react-popover',
+            ],
+            'ui-vendor': ['lucide-react', 'recharts', 'embla-carousel-react'],
+          },
+        },
+      },
     },
     server: {
       port: 3000,

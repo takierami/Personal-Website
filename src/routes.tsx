@@ -1,12 +1,13 @@
 import * as React from "react";
 import { createBrowserRouter } from "react-router";
 import { MainLayout } from "./components/layouts/MainLayout";
-import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
-import { ProjectsPage } from "./pages/ProjectsPage";
-import { ExperiencePage } from "./pages/ExperiencePage";
-import { ContactPage } from "./pages/ContactPage";
-import { NotFound } from "./pages/NotFound";
+
+const HomePage = React.lazy(() => import("./pages/HomePage").then(m => ({ default: m.HomePage })));
+const AboutPage = React.lazy(() => import("./pages/AboutPage").then(m => ({ default: m.AboutPage })));
+const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage").then(m => ({ default: m.ProjectsPage })));
+const ExperiencePage = React.lazy(() => import("./pages/ExperiencePage").then(m => ({ default: m.ExperiencePage })));
+const ContactPage = React.lazy(() => import("./pages/ContactPage").then(m => ({ default: m.ContactPage })));
+const NotFound = React.lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
 
 export const router = createBrowserRouter([
   {

@@ -4,6 +4,13 @@ import { ScrollProgress } from "../ui/ScrollProgress";
 import { Footer } from "../ui/Footer";
 import { BackToTop } from "../ui/BackToTop";
 import { motion, AnimatePresence } from "motion/react";
+import { Suspense } from "react";
+
+const PageFallback = () => (
+  <div className="min-h-screen bg-black flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 export const MainLayout = () => {
   return (
@@ -19,7 +26,9 @@ export const MainLayout = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <Outlet />
+          <Suspense fallback={<PageFallback />}>
+            <Outlet />
+          </Suspense>
         </motion.main>
       </AnimatePresence>
 
